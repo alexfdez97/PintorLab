@@ -19,8 +19,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnNew" Content="Nuevo" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch"/>
-        <Button x:Name="btnOpen" Content="Abrir" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch" Width="auto"/>
-        <Button x:Name="btnTemplates" Content="Plantillas" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch"/>
+        <Button x:Name="btnNew" Content="Nuevo" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,270,10,270" VerticalAlignment="Stretch" Grid.RowSpan="3" MinHeight="20" MinWidth="20"/>
+        <Button x:Name="btnOpen" Content="Abrir" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,270,10,270" VerticalAlignment="Stretch" Width="auto" Grid.RowSpan="3" MinHeight="20" MinWidth="20"/>
+        <Button x:Name="btnTemplates" Content="Plantillas" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10,270,10,270" VerticalAlignment="Stretch" Grid.RowSpan="3" MinHeight="20" MinWidth="20"/>
     </Grid>
 </Page>
