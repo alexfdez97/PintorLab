@@ -13,23 +13,18 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0xc0a
-
 namespace PintorLab
 {
-    /// <summary>
-    /// Página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
-    /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class Lienzo : Page
     {
-        public MainPage()
+        public Lienzo()
         {
             this.InitializeComponent();
-        }
-
-        private void BtnNew_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Lienzo));
+            canvasBorder.BorderThickness = new Thickness(2);
+            miCanvas.InkPresenter.InputDeviceTypes =
+                Windows.UI.Core.CoreInputDeviceTypes.Mouse |
+                Windows.UI.Core.CoreInputDeviceTypes.Pen |
+                Windows.UI.Core.CoreInputDeviceTypes.Touch;
         }
     }
 }
