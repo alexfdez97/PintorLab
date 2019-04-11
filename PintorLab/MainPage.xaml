@@ -15,14 +15,21 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnNew" Content="+" FontSize="200" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10, -20, 10, -20" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20" Click="BtnNew_Click"/>
-        <Button x:Name="btnOpen" Content="Abrir" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10, -20, 10, -20" VerticalAlignment="Stretch" Width="auto" Grid.Row="1" MinHeight="20" MinWidth="20"/>
-        <Button x:Name="btnTemplates" Content="Plantillas" FontFamily="IcoFont" Grid.Column="2" HorizontalAlignment="Stretch" Margin="10, -20, 10, -20" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20" FontSize="24"/>
+        <Button x:Name="btnNew" Content="+" FontSize="200" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20" Click="BtnNew_Click"/>
+        <Button x:Name="btnOpen" Content="Abrir" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20"/>
+        <Button x:Name="btnTemplates" Content="Plantillas" FontFamily="IcoFont" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20" FontSize="24"/>
     </Grid>
 </Page>

@@ -10,20 +10,16 @@
 
     <Grid Background="Aqua">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
-        <InkToolbar Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="10"/>
-        <Grid Background="White" Margin="10" Grid.Row="1" Grid.RowSpan="5" Grid.Column="0" Grid.ColumnSpan="3">
+        <Grid Margin="10,0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <InkToolbar TargetInkCanvas="{x:Bind miCanvas}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </Grid>
+        <Grid Background="White" Margin="10" Grid.Row="1" Grid.Column="0">
             <Border x:Name="canvasBorder" BorderBrush="Black">
                 <InkCanvas x:Name="miCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
             </Border>
