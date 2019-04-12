@@ -28,8 +28,23 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnNew" Content="+" FontSize="200" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20" Click="BtnNew_Click"/>
-        <Button x:Name="btnOpen" Content="Abrir" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20"/>
-        <Button x:Name="btnTemplates" Content="Plantillas" FontFamily="IcoFont" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20" FontSize="24"/>
+        <Button x:Name="btnNew" Background="Transparent" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20" Click="BtnNew_Click">
+            <Button.Content>
+                <Image Source="Assets/Pencil.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            </Button.Content>
+        </Button>
+        <TextBlock Text="New" FontFamily="Assets/Fonts/parkway_lush.ttf#Parkway Lush" FontSize="40" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen" Background="Transparent" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20">
+            <Button.Content>
+                <Image Source="Assets/OpenFolder.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            </Button.Content>
+        </Button>
+        <TextBlock Text="Open" FontFamily="Assets/Fonts/parkway_lush.ttf#Parkway Lush" FontSize="40" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button x:Name="btnTemplates" Background="Transparent" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20" FontSize="24">
+            <Button.Content>
+                <Image Source="Assets/Templates.png" />
+            </Button.Content>
+        </Button>
+        <TextBlock Text="Templates" FontFamily="Assets/Fonts/parkway_lush.ttf#Parkway Lush" FontSize="40" Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
     </Grid>
 </Page>

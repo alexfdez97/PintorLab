@@ -132,7 +132,11 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\Pencil.png" />
+    <Content Include="Assets\Templates.png" />
+    <Content Include="Assets\OpenFolder.png" />
     <Content Include="Assets\Fonts\icofont.ttf" />
+    <Content Include="Assets\Fonts\parkway_lush.ttf" />
     <None Include="PintorLab_StoreKey.pfx" />
     <None Include="PintorLab_TemporaryKey.pfx" />
   </ItemGroup>
