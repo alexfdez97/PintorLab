@@ -8,6 +8,19 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.TopAppBar>
+        <CommandBar Grid.Row="0"
+                    HorizontalAlignment="Right"
+                    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <AppBarButton Icon="Undo" Label="Undo" />
+            <AppBarButton Icon="Redo" Label="Redo" />
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Icon="OpenFile" Label="Open" />
+                <AppBarButton Icon="Save" Label="Save" />
+                <AppBarButton Icon="Delete" Label="Delete" />
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.TopAppBar>
     <Grid Background="Aqua">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -16,7 +29,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
-        <InkToolbar TargetInkCanvas="{x:Bind miCanvas}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10, 0"/>
+        <InkToolbar TargetInkCanvas="{x:Bind miCanvas}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 0"/>
         <Grid Background="White" Margin="10" Grid.Row="1" Grid.Column="0">
             <Border x:Name="canvasBorder" BorderBrush="Black">
                 <InkCanvas x:Name="miCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
