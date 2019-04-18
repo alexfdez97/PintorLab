@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PintorLab.Controllers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -31,6 +32,11 @@ namespace PintorLab
         public Lienzo(StorageFile sf) : this()
         {
 
+        }
+
+        private async void Save_Click(object sender, RoutedEventArgs e)
+        {
+            await FileController.GuardarDibujo(miCanvas);
         }
     }
 }
