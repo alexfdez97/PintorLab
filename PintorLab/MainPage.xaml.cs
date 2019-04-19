@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PintorLab.Controllers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -36,23 +37,7 @@ namespace PintorLab
 
         private async void BtnOpen_Click(object sender, RoutedEventArgs e)
         {
-            FileOpenPicker fop = new FileOpenPicker();
-
-            fop.ViewMode = PickerViewMode.Thumbnail;
-            fop.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-            fop.FileTypeFilter.Add(".jpg");
-            fop.FileTypeFilter.Add(".jpeg");
-            fop.FileTypeFilter.Add(".png");
-
-            StorageFile sf = await fop.PickSingleFileAsync();
-            if (sf != null)
-            {
-                this.Frame.Navigate(typeof(Lienzo), sf);
-            }
-            else
-            {
-
-            }
+            await FileController.AbrirArchivo();
         }
     }
 }

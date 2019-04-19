@@ -12,12 +12,12 @@
         <CommandBar Grid.Row="0"
                     HorizontalAlignment="Right"
                     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <AppBarButton Icon="Undo" Label="Undo" />
-            <AppBarButton Icon="Redo" Label="Redo" />
+            <AppBarButton Icon="Undo" Label="Undo" Click="Undo" x:Name="btnUndo"/>
+            <AppBarButton Icon="Redo" Label="Redo" Click="Redo" x:Name="btnRedo" />
             <CommandBar.SecondaryCommands>
-                <AppBarButton Icon="OpenFile" Label="Open" />
+                <AppBarButton Icon="OpenFile" Label="Open" Click="Open_Click"/>
                 <AppBarButton Icon="Save" Label="Save" Click="Save_Click" />
-                <AppBarButton Icon="Delete" Label="Delete" />
+                <AppBarButton Icon="Delete" Label="Delete" Click="Delete_Click" />
             </CommandBar.SecondaryCommands>
         </CommandBar>
     </Page.TopAppBar>
@@ -32,7 +32,7 @@
         <InkToolbar TargetInkCanvas="{x:Bind miCanvas}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 0"/>
         <Grid Background="White" Margin="10" Grid.Row="1" Grid.Column="0">
             <Border x:Name="canvasBorder" BorderBrush="Black">
-                <InkCanvas x:Name="miCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                <InkCanvas x:Name="miCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
             </Border>
         </Grid>
     </Grid>
