@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.UI.Input.Inking;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -45,7 +46,13 @@ namespace PintorLab
 
         private async void Open_Click(object sender, RoutedEventArgs e)
         {
-            await FileController.AbrirArchivo();
+            StorageFile sf = await FileController.AbrirArchivo();
+            IRandomAccessStream stream = await sf.OpenAsync(FileAccessMode.Read);
+            using (var inputStream = stream.GetInputStreamAt(0))
+            {
+                await miCanvas.InkPresenter.StrokeContainer.LoadAsync(inputStream);
+            }
+            stream.Dispose();
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
