@@ -46,16 +46,16 @@ namespace PintorLab.Views
 
         private async void Open_Click(object sender, RoutedEventArgs e)
         {
-            //StorageFile sf;
-            //if ((sf = await FileController.AbrirArchivo()) != null)
-            //{
-            //    IRandomAccessStream stream = await sf.OpenAsync(FileAccessMode.Read);
-            //    using (var inputStream = stream.GetInputStreamAt(0))
-            //    {
-            //        await miCanvas.InkPresenter.StrokeContainer.LoadAsync(inputStream);
-            //    }
-            //    stream.Dispose();
-            //}
+            StorageFile sf;
+            if ((sf = await FileController.AbrirArchivo()) != null)
+            {
+                IRandomAccessStream stream = await sf.OpenAsync(FileAccessMode.Read);
+                using (var inputStream = stream.GetInputStreamAt(0))
+                {
+                    await miCanvas.InkPresenter.StrokeContainer.LoadAsync(inputStream);
+                }
+                stream.Dispose();
+            }
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)

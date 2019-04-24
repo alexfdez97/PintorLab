@@ -39,5 +39,10 @@ namespace PintorLab.Views
         {
             await FileController.AbrirArchivo();
         }
+
+        private void BtnTemplates_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(TemplatesView));
+        }
     }
 }
