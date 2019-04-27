@@ -128,7 +128,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\TemplatesView.cs" />
+    <Compile Include="Views\TemplatesView.xaml.cs">
+      <DependentUpon>TemplatesView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -139,11 +141,11 @@
     <Content Include="Assets\OpenFolder.png" />
     <Content Include="Assets\Fonts\icofont.ttf" />
     <Content Include="Assets\Fonts\parkway_lush.ttf" />
-    <Content Include="Templates\boat.png" />
-    <Content Include="Templates\cupcakeowl.png" />
-    <Content Include="Templates\flowers.png" />
-    <Content Include="Templates\love.png" />
-    <Content Include="Templates\peace.png" />
+    <Content Include="Assets\Templates\boat.png" />
+    <Content Include="Assets\Templates\cupcakeowl.png" />
+    <Content Include="Assets\Templates\flowers.png" />
+    <Content Include="Assets\Templates\love.png" />
+    <Content Include="Assets\Templates\peace.png" />
     <None Include="PintorLab_StoreKey.pfx" />
     <None Include="PintorLab_TemporaryKey.pfx" />
   </ItemGroup>
@@ -215,6 +217,10 @@
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TemplatesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
