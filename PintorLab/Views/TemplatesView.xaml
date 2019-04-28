@@ -10,7 +10,7 @@
 
     <VariableSizedWrapGrid Grid.Row="2"
                        Orientation="Horizontal">
-        <ItemsControl ItemsSource="{Binding ImageList}">
+        <ItemsControl ItemsSource="{Binding current}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Image Source="{Binding}" />

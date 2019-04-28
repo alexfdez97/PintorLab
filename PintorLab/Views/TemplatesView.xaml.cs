@@ -27,14 +27,20 @@ namespace PintorLab.Views
     public sealed partial class TemplatesView : Page
     {
         private ObservableCollection<string> current;
+        private Task Inicializacion { get; set; }
 
         public TemplatesView()
         {
             this.InitializeComponent();
-            current = new ObservableCollection<string>();
+            Inicializacion = InicializaColeccionAsync();
             this.DataContext = current;
         }
 
+        private async Task InicializaColeccionAsync()
+        {
+            IEnumerable<string> temp = await GetFiles();
+            current = new ObservableCollection<string>(temp);
+        }
         private async Task<IEnumerable<string>> GetFiles()
         {
             StorageFolder appFolder = null;
