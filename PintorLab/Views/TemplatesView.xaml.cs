@@ -31,16 +31,18 @@ namespace PintorLab.Views
 
         public TemplatesView()
         {
-            this.InitializeComponent();
-            Inicializacion = InicializaColeccionAsync();
             this.DataContext = current;
+            Inicializacion = InicializaColeccionAsync();
         }
 
         private async Task InicializaColeccionAsync()
         {
             IEnumerable<string> temp = await GetFiles();
             current = new ObservableCollection<string>(temp);
+            current.Add("ms-appx:///Assets/Templates/boat.png");
+            this.InitializeComponent();
         }
+
         private async Task<IEnumerable<string>> GetFiles()
         {
             StorageFolder appFolder = null;

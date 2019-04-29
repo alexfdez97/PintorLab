@@ -8,14 +8,22 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <VariableSizedWrapGrid Grid.Row="2"
-                       Orientation="Horizontal">
-        <ItemsControl ItemsSource="{Binding current}">
-            <ItemsControl.ItemTemplate>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <GridView x:Name="PhotoCollectionViewer" ItemsSource="{Binding current}"
+                  HorizontalContentAlignment="Center" HorizontalAlignment="Center">
+            <GridView.ItemContainerTransitions>
+                <TransitionCollection />
+            </GridView.ItemContainerTransitions>
+
+            <GridView.ItemTemplate>
                 <DataTemplate>
-                    <Image Source="{Binding}" />
+                    <Grid x:Name="GalleryItem">
+                        <Border x:Name="Shadow" />
+                        <Image x:Name="Image" Source="{Binding .}" Height="200" Width="200" Margin="10"
+                               Stretch="UniformToFill" />
+                    </Grid>
                 </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-    </VariableSizedWrapGrid>
+            </GridView.ItemTemplate>
+        </GridView>
+    </Grid>
 </Page>
