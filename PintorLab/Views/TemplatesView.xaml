@@ -9,21 +9,23 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Border Background="Grey">
         <GridView x:Name="PhotoCollectionViewer" ItemsSource="{Binding current}"
                   HorizontalContentAlignment="Center" HorizontalAlignment="Center">
             <GridView.ItemContainerTransitions>
                 <TransitionCollection />
             </GridView.ItemContainerTransitions>
 
-            <GridView.ItemTemplate>
-                <DataTemplate>
-                    <Grid x:Name="GalleryItem">
-                        <Border x:Name="Shadow" />
-                        <Image x:Name="Image" Source="{Binding .}" Height="200" Width="200" Margin="10"
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid x:Name="GalleryItem">
+                            <Border x:Name="Shadow" />
+                            <Image x:Name="Image" Source="{Binding .}" Height="200" Width="200" Margin="10"
                                Stretch="UniformToFill" />
-                    </Grid>
-                </DataTemplate>
-            </GridView.ItemTemplate>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
         </GridView>
+        </Border>
     </Grid>
 </Page>

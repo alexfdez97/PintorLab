@@ -18,6 +18,7 @@
                 <AppBarButton Icon="OpenFile" Label="Open" Click="Open_Click"/>
                 <AppBarButton Icon="Save" Label="Save" Click="Save_Click" />
                 <AppBarButton Icon="Delete" Label="Delete" Click="Delete_Click" />
+                <AppBarButton Icon="Back" Label="Menu" Click="Menu_Click"/>
             </CommandBar.SecondaryCommands>
         </CommandBar>
     </Page.TopAppBar>

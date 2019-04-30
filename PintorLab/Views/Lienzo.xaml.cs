@@ -88,5 +88,10 @@ namespace PintorLab.Views
                 miCanvas.InkPresenter.StrokeContainer.AddStroke(stk);
             }
         }
+
+        private void Menu_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
     }
 }
