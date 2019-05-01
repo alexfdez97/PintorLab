@@ -8,24 +8,16 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Border Background="Grey">
-        <GridView x:Name="PhotoCollectionViewer" ItemsSource="{Binding current}"
-                  HorizontalContentAlignment="Center" HorizontalAlignment="Center">
-            <GridView.ItemContainerTransitions>
-                <TransitionCollection />
-            </GridView.ItemContainerTransitions>
-
-                <GridView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid x:Name="GalleryItem">
-                            <Border x:Name="Shadow" />
-                            <Image x:Name="Image" Source="{Binding .}" Height="200" Width="200" Margin="10"
-                               Stretch="UniformToFill" />
-                        </Grid>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-        </GridView>
-        </Border>
-    </Grid>
+    <GridView SelectionMode="Single" ItemsSource="{x:Bind current}">
+        <GridView.ItemTemplate>
+            <DataTemplate x:Name="ImageGalleryDataTemplate">
+                <Image Source="ms-appx:///Assets/Templates/boat.png" Height="180" Width="180" Stretch="UniformToFill"/>
+            </DataTemplate>
+        </GridView.ItemTemplate>
+        <GridView.ItemsPanel>
+            <ItemsPanelTemplate>
+                <ItemsWrapGrid MaximumRowsOrColumns="200" Orientation="Horizontal"/>
+            </ItemsPanelTemplate>
+        </GridView.ItemsPanel>
+    </GridView>
 </Page>

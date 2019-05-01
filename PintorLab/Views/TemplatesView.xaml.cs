@@ -28,6 +28,7 @@ namespace PintorLab.Views
     {
         private ObservableCollection<string> current;
         private Task Inicializacion { get; set; }
+        public string Ruta { set; get; }
 
         public TemplatesView()
         {
@@ -39,6 +40,7 @@ namespace PintorLab.Views
         {
             IEnumerable<string> temp = await GetFiles();
             current = new ObservableCollection<string>(temp);
+            Ruta = "ms-appx:///Assets/Templates/boat.png";
             current.Add("ms-appx:///Assets/Templates/boat.png");
             this.InitializeComponent();
         }
