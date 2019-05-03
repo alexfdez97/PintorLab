@@ -38,14 +38,12 @@ namespace PintorLab.Views
 
         private async Task InicializaColeccionAsync()
         {
-            IEnumerable<string> temp = await GetFiles();
-            current = new ObservableCollection<string>(temp);
-            Ruta = "ms-appx:///Assets/Templates/boat.png";
-            current.Add("ms-appx:///Assets/Templates/boat.png");
+            current = await GetFiles();
+            current.Add(@"D:\Users\Alex\Pictures\Templates\flowers.png");
             this.InitializeComponent();
         }
 
-        private async Task<IEnumerable<string>> GetFiles()
+        private async Task<ObservableCollection<string>> GetFiles()
         {
             StorageFolder appFolder = null;
             try
@@ -62,8 +60,17 @@ namespace PintorLab.Views
                     await file.CopyAsync(appFolder);
                 }
             }
-            return Directory.GetFiles(appFolder.Path, "*.*", SearchOption.TopDirectoryOnly)
-            .Where(s => s.EndsWith(".jpeg") || s.EndsWith(".png") || s.EndsWith(".bmp"));
+            IReadOnlyList<StorageFile> ff = await appFolder.GetFilesAsync();
+            ObservableCollection<string> sfiles = new ObservableCollection<string>();
+            foreach (StorageFile sf in ff)
+            {
+                string path = sf.Path;
+                if (path.EndsWith(".jpeg") || path.EndsWith(".png") || path.EndsWith(".bmp"))
+                {
+                    sfiles.Add(path);
+                }
+            }
+            return sfiles;
         }
 
         private async void CreatePage()

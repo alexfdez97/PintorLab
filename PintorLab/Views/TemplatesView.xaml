@@ -10,8 +10,8 @@
 
     <GridView SelectionMode="Single" ItemsSource="{x:Bind current}">
         <GridView.ItemTemplate>
-            <DataTemplate x:Name="ImageGalleryDataTemplate">
-                <Image Source="ms-appx:///Assets/Templates/boat.png" Height="180" Width="180" Stretch="UniformToFill"/>
+            <DataTemplate x:DataType="x:String">
+                <Image Source="{x:Bind}" Height="180" Width="180" Stretch="UniformToFill"/>
             </DataTemplate>
         </GridView.ItemTemplate>
         <GridView.ItemsPanel>

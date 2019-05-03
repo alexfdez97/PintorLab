@@ -47,6 +47,7 @@ namespace PintorLab.Views
         private async void Open_Click(object sender, RoutedEventArgs e)
         {
             StorageFile sf;
+            
             if ((sf = await FileController.AbrirArchivo()) != null)
             {
                 IRandomAccessStream stream = await sf.OpenAsync(FileAccessMode.Read);
