@@ -17,3 +17,9 @@ Semana 3
 Se inicia la creación del formulario de plantillas.
 Problemas para realizar este formulario y para terminar la operación de apertura de archivos.
 Se necesita más tiempo la siguiente semana.
+
+Semana 4
+---------
+Reparaciones varias en el código.
+Añadidos nuevos botones.
+Deshabilitadas funciones que no se corrigen.
