@@ -10,8 +10,15 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace PintorLab.Controllers
 {
+    /**
+     * Controlador que gestiona el comportamiento con los archivos
+     */
     public static class FileController
     {
+        /**
+         * Guarda el dibujo del InkCanvas en un archivo con el formato especificado
+         * Se utiliza paquete
+         */
         public static async Task GuardarDibujo(InkCanvas inkCanvas)
         {
             FileSavePicker savePicker = new FileSavePicker();
@@ -29,6 +36,9 @@ namespace PintorLab.Controllers
             }
         }
 
+        /**
+         * Abre un FileOpenPicker y retorna el archivo seleccionado
+         */
         public static async Task<StorageFile> AbrirArchivo()
         {
             FileOpenPicker fop = new FileOpenPicker();
@@ -42,6 +52,9 @@ namespace PintorLab.Controllers
             return await fop.PickSingleFileAsync();
         }
 
+        /**
+         * Transforma el dibujo del InkCanvas a una imagen
+         */
         private static CanvasRenderTarget DibujoAImagen(InkCanvas inkCanvas)
         {
             CanvasDevice device = CanvasDevice.GetSharedDevice();

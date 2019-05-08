@@ -8,6 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <!--GridView de images de la carpeta templates-->
     <GridView SelectionMode="Single" ItemsSource="{x:Bind current}">
         <GridView.ItemTemplate>
             <DataTemplate x:DataType="x:String">

@@ -19,10 +19,19 @@ using Windows.UI.Xaml.Navigation;
 
 namespace PintorLab.Views
 {
+    /**
+     * Clase de la página del Lienzo
+     */
     public sealed partial class Lienzo : Page
     {
+        /**
+         * Almacena los cambios que se realizan sobre el InkCanvas
+         */
         public Stack<InkStroke> UndoStrokes { get; set; }
 
+        /**
+         * Inicializa los componentes de la clase y tipos de dispositivos compatibles.
+         */
         public Lienzo()
         {
             UndoStrokes = new Stack<InkStroke>();
@@ -34,16 +43,26 @@ namespace PintorLab.Views
                 Windows.UI.Core.CoreInputDeviceTypes.Touch;
         }
 
+        //TODO
+        /**
+         * Llama al padre y inicializa el Lienzo con el archivo pasado
+         */
         public Lienzo(StorageFile sf) : this()
         {
 
         }
 
+        /**
+         * Evento de guardado
+         */
         private async void Save_Click(object sender, RoutedEventArgs e)
         {
             await FileController.GuardarDibujo(miCanvas);
         }
 
+        /**
+         * Evento de apertura de archivo
+         */
         private async void Open_Click(object sender, RoutedEventArgs e)
         {
             StorageFile sf;
@@ -59,11 +78,17 @@ namespace PintorLab.Views
             }
         }
 
+        /**
+         * Evento que elimina el contenido del InkCanvas
+         */
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             miCanvas.InkPresenter.StrokeContainer.Clear();
         }
 
+        /**
+         * Vuelve al último cambio realizado en el InkCanvas
+         */
         private void Undo(object sender, RoutedEventArgs e)
         {
             IReadOnlyList<InkStroke> strokes = miCanvas.InkPresenter.StrokeContainer.GetStrokes();
@@ -75,6 +100,9 @@ namespace PintorLab.Views
             }
         }
 
+        /**
+         * Rehace el Undo
+         */
         private void Redo(object sender, RoutedEventArgs e)
         {
             if (UndoStrokes.Count > 0)
@@ -90,6 +118,9 @@ namespace PintorLab.Views
             }
         }
 
+        /**
+         * Evento para volver al menú
+         */
         private void Menu_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));

@@ -7,8 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <!--Estructura de la página principal-->
     <Grid>
         <Grid.Background>
+            <!--Imagen de fondo del menú-->
             <ImageBrush Stretch="Fill" ImageSource="../Assets/Back-menu.jpg" />
         </Grid.Background>
         <Grid.ColumnDefinitions>
@@ -28,18 +30,21 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <!--Boton de nuevo dibujo-->
         <Button x:Name="btnNew" Background="Transparent" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20" Click="BtnNew_Click">
             <Button.Content>
                 <Image Source="../Assets/Pencil.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             </Button.Content>
         </Button>
         <TextBlock Text="New" Foreground="Black" FontFamily="../Assets/Fonts/parkway_lush.ttf#Parkway Lush" FontSize="40" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <!--Boton de abrir dibujo-->
         <Button x:Name="btnOpen" Background="Transparent" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20" Click="BtnOpen_Click" IsEnabled="False">
             <Button.Content>
                 <Image Source="../Assets/OpenFolder.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             </Button.Content>
         </Button>
         <TextBlock Text="Open" Foreground="Black" FontFamily="../Assets/Fonts/parkway_lush.ttf#Parkway Lush" FontSize="40" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <!--Boton de abrir plantillas-->
         <Button x:Name="btnTemplates" Background="Transparent" Grid.Column="7" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" MinHeight="20" MinWidth="20" FontSize="24" Click="BtnTemplates_Click" IsEnabled="False">
             <Button.Content>
                 <Image Source="../Assets/Templates.png" />
