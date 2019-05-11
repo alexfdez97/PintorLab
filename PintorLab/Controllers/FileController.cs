@@ -48,6 +48,7 @@ namespace PintorLab.Controllers
             fop.FileTypeFilter.Add(".jpg");
             fop.FileTypeFilter.Add(".jpeg");
             fop.FileTypeFilter.Add(".png");
+            fop.FileTypeFilter.Add(".gif");
 
             return await fop.PickSingleFileAsync();
         }

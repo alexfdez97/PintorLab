@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"  xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4" xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:uap6="http://schemas.microsoft.com/appx/manifest/uap/windows10/6" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" IgnorableNamespaces="uap mp uap4 iot uap3 uap6 uap2">
   <Identity Name="7963MorrazoCode.PintorLab" Publisher="CN=1D9348B8-6F4A-4A7D-AE34-B615103C1F19" Version="0.1.1.0" />
   <mp:PhoneIdentity PhoneProductId="75d18a49-fdd4-4e51-bedb-fc69114af175" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
@@ -27,4 +27,42 @@
       </uap:VisualElements>
     </Application>
   </Applications>
+  <Capabilities>
+    <uap:Capability Name="chat"/>
+    <uap4:Capability Name="offlineMapsManagement"/>
+    <iot:Capability Name="systemManagement"/>
+    <uap3:Capability Name="userNotificationListener"/>
+    <Capability Name="allJoyn"/>
+    <uap:Capability Name="removableStorage"/>
+    <uap:Capability Name="enterpriseAuthentication"/>
+    <uap:Capability Name="picturesLibrary"/>
+    <uap:Capability Name="musicLibrary"/>
+    <uap:Capability Name="videosLibrary"/>
+    <uap6:Capability Name="graphicsCapture"/>
+    <uap:Capability Name="sharedUserCertificates"/>
+    <uap:Capability Name="appointments"/>
+    <uap:Capability Name="contacts"/>
+    <iot:Capability Name="lowLevelDevices"/>
+    <Capability Name="codeGeneration"/>
+    <uap2:Capability Name="phoneCallHistoryPublic"/>
+    <uap:Capability Name="userAccountInformation"/>
+    <Capability Name="internetClientServer"/>
+    <Capability Name="internetClient"/>
+    <uap:Capability Name="phoneCall"/>
+    <uap:Capability Name="voipCall"/>
+    <uap:Capability Name="blockedChatMessages"/>
+    <uap:Capability Name="objects3D"/>
+    <uap2:Capability Name="spatialPerception"/>
+    <Capability Name="privateNetworkClientServer"/>
+    <uap3:Capability Name="backgroundMediaPlayback"/>
+    <uap3:Capability Name="remoteSystem"/>
+    <uap4:Capability Name="userDataTasks"/>
+    <DeviceCapability Name="lowLevel"/>
+    <DeviceCapability Name="bluetooth"/>
+    <DeviceCapability Name="webcam"/>
+    <DeviceCapability Name="gazeInput"/>
+    <DeviceCapability Name="microphone"/>
+    <DeviceCapability Name="proximity"/>
+    <DeviceCapability Name="pointOfService"/>
+    <DeviceCapability Name="location"/></Capabilities>
 </Package>

@@ -70,6 +70,8 @@ namespace PintorLab.Views
             if ((sf = await FileController.AbrirArchivo()) != null)
             {
                 IRandomAccessStream stream = await sf.OpenAsync(FileAccessMode.Read);
+                //Image image = new Image();
+                //image.Source = new BitmapImage(new Uri("ms - appx:///Assets/donut-icon.png"));
                 using (var inputStream = stream.GetInputStreamAt(0))
                 {
                     await miCanvas.InkPresenter.StrokeContainer.LoadAsync(inputStream);
