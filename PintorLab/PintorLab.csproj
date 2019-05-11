@@ -160,15 +160,19 @@
     <Content Include="Assets\Templates\peace.png" />
     <None Include="PintorLab_StoreKey.pfx" />
     <None Include="PintorLab_TemporaryKey.pfx" />
-    <PRIResource Include="Strings\ru\Resources.resw" />
-    <PRIResource Include="Strings\pt\Resources.resw" />
-    <PRIResource Include="Strings\pl\Resources.resw" />
-    <PRIResource Include="Strings\ja\Resources.resw" />
-    <PRIResource Include="Strings\it\Resources.resw" />
-    <PRIResource Include="Strings\gl\Resources.resw" />
-    <PRIResource Include="Strings\fr\Resources.resw" />
-    <PRIResource Include="Strings\es\Resources.resw" />
-    <PRIResource Include="Strings\zh-Hans\Resources.resw" />
+    <PRIResource Include="Strings\ru-RU\Resources.resw" />
+    <PRIResource Include="Strings\pt-PT\Resources.resw" />
+    <PRIResource Include="Strings\pl-PL\Resources.resw" />
+    <PRIResource Include="Strings\nl-NL\Resources.resw" />
+    <PRIResource Include="Strings\ja-JP\Resources.resw" />
+    <PRIResource Include="Strings\it-IT\Resources.resw" />
+    <PRIResource Include="Strings\gl-ES\Resources.resw" />
+    <PRIResource Include="Strings\fr-FR\Resources.resw" />
+    <PRIResource Include="Strings\eu-ES\Resources.resw" />
+    <PRIResource Include="Strings\es-ES\Resources.resw" />
+    <PRIResource Include="Strings\zh-CN\Resources.resw" />
+    <PRIResource Include="Strings\ca-ES\Resources.resw" />
+    <PRIResource Include="Strings\de-DE\Resources.resw" />
     <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
@@ -254,25 +258,19 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <XliffResource Include="MultilingualResources\PintorLab.ca.xlf" />
-    <XliffResource Include="MultilingualResources\PintorLab.de.xlf" />
-    <XliffResource Include="MultilingualResources\PintorLab.es.xlf">
-      <SubType>Designer</SubType>
-    </XliffResource>
-    <XliffResource Include="MultilingualResources\PintorLab.fr.xlf" />
-    <XliffResource Include="MultilingualResources\PintorLab.gl.xlf">
-      <SubType>Designer</SubType>
-    </XliffResource>
-    <XliffResource Include="MultilingualResources\PintorLab.it.xlf" />
-    <XliffResource Include="MultilingualResources\PintorLab.ja.xlf" />
-    <XliffResource Include="MultilingualResources\PintorLab.pl.xlf" />
-    <XliffResource Include="MultilingualResources\PintorLab.pt.xlf" />
-    <XliffResource Include="MultilingualResources\PintorLab.ru.xlf" />
-    <XliffResource Include="MultilingualResources\PintorLab.zh-Hans.xlf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Strings\ca\" />
-    <Folder Include="Strings\de\" />
+    <XliffResource Include="MultilingualResources\PintorLab.ca-ES.xlf" />
+    <XliffResource Include="MultilingualResources\PintorLab.de-DE.xlf" />
+    <XliffResource Include="MultilingualResources\PintorLab.es-ES.xlf" />
+    <XliffResource Include="MultilingualResources\PintorLab.eu-ES.xlf" />
+    <XliffResource Include="MultilingualResources\PintorLab.fr-FR.xlf" />
+    <XliffResource Include="MultilingualResources\PintorLab.gl-ES.xlf" />
+    <XliffResource Include="MultilingualResources\PintorLab.it-IT.xlf" />
+    <XliffResource Include="MultilingualResources\PintorLab.ja-JP.xlf" />
+    <XliffResource Include="MultilingualResources\PintorLab.nl-NL.xlf" />
+    <XliffResource Include="MultilingualResources\PintorLab.pl-PL.xlf" />
+    <XliffResource Include="MultilingualResources\PintorLab.pt-PT.xlf" />
+    <XliffResource Include="MultilingualResources\PintorLab.ru-RU.xlf" />
+    <XliffResource Include="MultilingualResources\PintorLab.zh-CN.xlf" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
