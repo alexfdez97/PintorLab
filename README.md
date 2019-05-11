@@ -29,3 +29,4 @@ Semana 5
 Correcciones en el Manifest.
 Añadidos comentarios.
 Se sube a la tienda la versión 0.1.0.
+Implementando multidioma
