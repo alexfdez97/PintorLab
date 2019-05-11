@@ -14,13 +14,13 @@
         <CommandBar Grid.Row="0"
                     HorizontalAlignment="Right"
                     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <AppBarButton Icon="Undo" Label="Undo" Click="Undo" x:Name="btnUndo"/>
-            <AppBarButton Icon="Redo" Label="Redo" Click="Redo" x:Name="btnRedo" />
+            <AppBarButton x:Uid="barBtnUndo" Icon="Undo" Label="Undo" Click="Undo" x:Name="btnUndo"/>
+            <AppBarButton x:Uid="barBtnRedo" Icon="Redo" Label="Redo" Click="Redo" x:Name="btnRedo" />
             <CommandBar.SecondaryCommands>
-                <AppBarButton Icon="OpenFile" Label="Open" Click="Open_Click" IsEnabled="False"/>
-                <AppBarButton Icon="Save" Label="Save" Click="Save_Click" />
-                <AppBarButton Icon="Delete" Label="Delete" Click="Delete_Click" />
-                <AppBarButton Icon="Back" Label="Menu" Click="Menu_Click"/>
+                <AppBarButton x:Uid="barBtnOpenFile" Icon="OpenFile" Label="Open" Click="Open_Click" IsEnabled="False"/>
+                <AppBarButton x:Uid="barBtnSave" Icon="Save" Label="Save" Click="Save_Click" />
+                <AppBarButton x:Uid="barBtnDelete" Icon="Delete" Label="Delete" Click="Delete_Click" />
+                <AppBarButton x:Uid="barBtnBack" Icon="Back" Label="Menu" Click="Menu_Click"/>
             </CommandBar.SecondaryCommands>
         </CommandBar>
     </Page.TopAppBar>
