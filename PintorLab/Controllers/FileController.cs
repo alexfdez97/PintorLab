@@ -24,15 +24,28 @@ namespace PintorLab.Controllers
             FileSavePicker savePicker = new FileSavePicker();
 
             savePicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-            savePicker.FileTypeChoices.Add("Image", new List<string>() { ".png", ".jpeg", ".jpg" });
+            savePicker.FileTypeChoices.Add("PNG", new List<string>() { ".png"});
+            savePicker.FileTypeChoices.Add("JPG", new List<string>() { ".bmp"});
+            savePicker.FileTypeChoices.Add("JPEG", new List<string>() { ".jpeg"});
             savePicker.SuggestedFileName = "newdraw";
 
             StorageFile sf = await savePicker.PickSaveFileAsync();
-
             if (sf != null)
             {
                 var stream = await sf.OpenAsync(FileAccessMode.ReadWrite);
-                await DibujoAImagen(inkCanvas).SaveAsync(stream, CanvasBitmapFileFormat.Png, 1f);
+                string fName = sf.Name.ToLower();
+                if (fName.EndsWith("bmp"))
+                {
+                    await DibujoAImagen(inkCanvas).SaveAsync(stream, CanvasBitmapFileFormat.Bmp, 1f);
+                }
+                else if (fName.EndsWith("png"))
+                {
+                    await DibujoAImagen(inkCanvas).SaveAsync(stream, CanvasBitmapFileFormat.Png, 1f);
+                }
+                else if (fName.EndsWith("jpeg"))
+                {
+                    await DibujoAImagen(inkCanvas).SaveAsync(stream, CanvasBitmapFileFormat.Jpeg, 1f);
+                }
             }
         }
 
