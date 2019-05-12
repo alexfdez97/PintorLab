@@ -14,12 +14,18 @@
         <CommandBar Grid.Row="0"
                     HorizontalAlignment="Right"
                     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <!--Boton de barra Deshacer-->
             <AppBarButton x:Uid="barBtnUndo" Icon="Undo" Label="Undo" Click="Undo" x:Name="btnUndo"/>
+            <!--Boton de barra Rehacer-->
             <AppBarButton x:Uid="barBtnRedo" Icon="Redo" Label="Redo" Click="Redo" x:Name="btnRedo" />
             <CommandBar.SecondaryCommands>
+                <!--Boton de barra abrir archivo-->
                 <AppBarButton x:Uid="barBtnOpenFile" Icon="OpenFile" Label="Open" Click="Open_Click" IsEnabled="False"/>
+                <!--Boton de barra guardar-->
                 <AppBarButton x:Uid="barBtnSave" Icon="Save" Label="Save" Click="Save_Click" />
+                <!--Boton de barra eliminar-->
                 <AppBarButton x:Uid="barBtnDelete" Icon="Delete" Label="Delete" Click="Delete_Click" />
+                <!--Boton de barra Menu-->
                 <AppBarButton x:Uid="barBtnBack" Icon="Back" Label="Menu" Click="Menu_Click"/>
             </CommandBar.SecondaryCommands>
         </CommandBar>
@@ -32,9 +38,11 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
+        <!--Barra de herramientas del canvas-->
         <InkToolbar TargetInkCanvas="{x:Bind miCanvas}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 0"/>
         <Grid Background="White" Margin="10" Grid.Row="1" Grid.Column="0">
             <Border x:Name="canvasBorder" BorderBrush="Black">
+                <!--Lienzo de dibujo-->
                 <InkCanvas x:Name="miCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
             </Border>
         </Grid>
