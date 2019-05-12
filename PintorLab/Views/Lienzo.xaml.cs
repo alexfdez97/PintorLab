@@ -72,7 +72,20 @@ namespace PintorLab.Views
                 IRandomAccessStream stream = await sf.OpenAsync(FileAccessMode.Read);
                 using (var inputStream = stream.GetInputStreamAt(0))
                 {
-                    await miCanvas.InkPresenter.StrokeContainer.LoadAsync(inputStream);
+                    try
+                    {
+                        await miCanvas.InkPresenter.StrokeContainer.LoadAsync(inputStream);
+                    }
+                    catch (Exception ex)
+                    {
+                        ContentDialog errorDialog = new ContentDialog
+                        {
+                            Title = "Error",
+                            Content = ex.Message,
+                            CloseButtonText = "Ok"
+                        };
+                        await errorDialog.ShowAsync();
+                    }
                 }
                 stream.Dispose();
             }

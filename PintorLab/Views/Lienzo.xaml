@@ -20,7 +20,7 @@
             <AppBarButton x:Uid="barBtnRedo" Icon="Redo" Label="Redo" Click="Redo" x:Name="btnRedo" />
             <CommandBar.SecondaryCommands>
                 <!--Boton de barra abrir archivo-->
-                <AppBarButton x:Uid="barBtnOpenFile" Icon="OpenFile" Label="Open" Click="Open_Click" IsEnabled="False"/>
+                <AppBarButton x:Uid="barBtnOpenFile" Icon="OpenFile" Label="Open" Click="Open_Click" />
                 <!--Boton de barra guardar-->
                 <AppBarButton x:Uid="barBtnSave" Icon="Save" Label="Save" Click="Save_Click" />
                 <!--Boton de barra eliminar-->
