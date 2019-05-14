@@ -19,19 +19,19 @@ using Windows.UI.Xaml.Navigation;
 
 namespace PintorLab.Views
 {
-    /**
-     * Clase de la página del Lienzo
-     */
+    ///<summary>
+    ///Clase de la página del Lienzo
+    ///</summary>
     public sealed partial class Lienzo : Page
     {
-        /**
-         * Almacena los cambios que se realizan sobre el InkCanvas
-         */
+        ///<summary>
+        ///Almacena los cambios que se realizan sobre el InkCanvas
+        ///</summary>
         public Stack<InkStroke> UndoStrokes { get; set; }
 
-        /**
-         * Inicializa los componentes de la clase y tipos de dispositivos compatibles.
-         */
+        ///<summary>
+        ///Inicializa los componentes de la clase y tipos de dispositivos compatibles.
+        ///</summary>
         public Lienzo()
         {
             UndoStrokes = new Stack<InkStroke>();
@@ -44,25 +44,40 @@ namespace PintorLab.Views
         }
 
         //TODO
-        /**
-         * Llama al padre y inicializa el Lienzo con el archivo pasado
-         */
+        ///<summary>
+        ///Llama al padre y inicializa el Lienzo con el archivo pasado
+        ///</summary>
+        ///<param name="sf">
+        ///Es la imagen que se carga en el InkCanvas
+        /// </param>
         public Lienzo(StorageFile sf) : this()
         {
 
         }
 
-        /**
-         * Evento de guardado
-         */
+        ///<summary>
+        ///Evento de guardado
+        ///</summary>
+        ///<param name="e">
+        ///El argumento del evento
+        /// </param>
+        /// <param name="sender">
+        /// El objeto que lo envía
+        /// </param>
         private async void Save_Click(object sender, RoutedEventArgs e)
         {
             await FileController.GuardarDibujo(miCanvas);
         }
 
-        /**
-         * Evento de apertura de archivo
-         */
+        ///<summary>
+        ///Evento de apertura de archivo
+        ///</summary>
+        ///<param name="sender">
+        ///El objeto que lo envía
+        /// </param>
+        /// <param name="e">
+        /// El argumento del evento
+        /// </param>
         private async void Open_Click(object sender, RoutedEventArgs e)
         {
             StorageFile sf;
@@ -78,17 +93,29 @@ namespace PintorLab.Views
             }
         }
 
-        /**
-         * Evento que elimina el contenido del InkCanvas
-         */
+        ///<summary>
+        ///Evento que elimina el contenido del InkCanvas
+        ///</summary>
+        ///<param name="sender">
+        ///El objeto que lo envía
+        /// </param>
+        /// <param name="e">
+        /// El argumento del evento
+        /// </param>
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             miCanvas.InkPresenter.StrokeContainer.Clear();
         }
 
-        /**
-         * Vuelve al último cambio realizado en el InkCanvas
-         */
+        ///<summary>
+        ///Vuelve al último cambio realizado en el InkCanvas
+        ///</summary>
+        ///<param name="sender">
+        ///El objeto que lo envía
+        /// </param>
+        /// <param name="e">
+        /// El argumento del evento
+        /// </param>
         private void Undo(object sender, RoutedEventArgs e)
         {
             IReadOnlyList<InkStroke> strokes = miCanvas.InkPresenter.StrokeContainer.GetStrokes();
@@ -100,9 +127,15 @@ namespace PintorLab.Views
             }
         }
 
-        /**
-         * Rehace el Undo
-         */
+        ///<summary>
+        ///Rehace el Undo
+        ///</summary>
+        ///<param name="sender">
+        ///El objeto que lo envía
+        /// </param>
+        /// <param name="e">
+        /// El argumento del evento
+        /// </param>
         private void Redo(object sender, RoutedEventArgs e)
         {
             if (UndoStrokes.Count > 0)
@@ -118,9 +151,15 @@ namespace PintorLab.Views
             }
         }
 
-        /**
-         * Evento para volver al menú
-         */
+        ///<summary>
+        ///Evento para volver al menú
+        ///</summary>
+        ///<param name="sender">
+        ///El objeto que lo envía
+        /// </param>
+        /// <param name="e">
+        /// El argumento del evento
+        /// </param>
         private void Menu_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));

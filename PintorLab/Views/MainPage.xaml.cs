@@ -18,38 +18,56 @@ using Windows.UI.Xaml.Navigation;
 
 namespace PintorLab.Views
 {
-    /**
-     * Clase de la página principal
-     */
+    ///<summary>
+    ///Clase de la página principal
+    ///</summary>
     public sealed partial class MainPage : Page
     {
-        /**
-         * Inicializa la página
-         */
+        ///<summary>
+        ///Inicializa la página
+        ///</summary>
         public MainPage()
         {
             this.InitializeComponent();
         }
 
-        /**
-         * Controla el evento Click del botón BtnNew
-         */
+        ///<summary>
+        ///Controla el evento Click del botón BtnNew
+        ///</summary>
+        ///<param name="e">
+        ///El argumento del evento
+        /// </param>
+        /// <param name="sender">
+        /// El objeto que lo envía
+        /// </param>
         private void BtnNew_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Lienzo));
         }
 
-        /**
-         * Controla el evento Click del botón BtnOpen
-         */
+        ///<summary>
+        ///Controla el evento Click del botón BtnOpen
+        ///</summary>
+        ///<param name="e">
+        ///El argumento del evento
+        /// </param>
+        /// <param name="sender">
+        /// El objeto que lo envía
+        /// </param>
         private async void BtnOpen_Click(object sender, RoutedEventArgs e)
         {
             await FileController.AbrirArchivo();
         }
 
-        /**
-         * Controla el evento Click del botón BtnTemplates
-         */
+        ///<summary>
+        ///Controla el evento Click del botón BtnTemplates
+        ///</summary>
+        ///<param name="e">
+        ///El argumento del evento
+        /// </param>
+        /// <param name="sender">
+        /// El objeto que lo envía
+        /// </param>
         private void BtnTemplates_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(TemplatesView));

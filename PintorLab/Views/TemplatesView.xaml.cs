@@ -19,32 +19,33 @@ using Windows.UI.Xaml.Navigation;
 
 namespace PintorLab.Views
 {
-    /**
-     * Clase que de las plantillas de dibujo
-     */
+    ///<summary>
+    ///Clase que de las plantillas de dibujo
+    ///</summary>
     public sealed partial class TemplatesView : Page
     {
-        /**
-         * Coleccion de imagenes de previsualización
-         */
+        ///<summary>
+        ///Coleccion de imagenes de previsualización
+        ///</summary>
         private ObservableCollection<string> current;
-        /**
-         * Tarea que inicializa elementos de forma asincrona
-         */
+
+        ///<summary>
+        ///Tarea que inicializa elementos de forma asincrona
+        ///</summary>
         private Task Inicializacion { get; set; }
 
-        /**
-         * Inicializa las propiedades
-         */
+        ///<summary>
+        ///Inicializa las propiedades
+        ///</summary>
         public TemplatesView()
         {
             this.DataContext = current;
             Inicializacion = InicializaColeccionAsync();
         }
 
-        /**
-         * Inicializa la colección de imágenes para previsualización
-         */
+        ///<summary>
+        ///Inicializa la colección de imágenes para previsualización
+        ///</summary>
         private async Task InicializaColeccionAsync()
         {
             current = await GetFiles();
@@ -52,9 +53,9 @@ namespace PintorLab.Views
             this.InitializeComponent();
         }
 
-        /**
-         * Obtiene los archivos de la carpeta Templates en Pictures
-         */
+        ///<summary>
+        ///Obtiene los archivos de la carpeta Templates en Pictures
+        ///</summary>
         private async Task<ObservableCollection<string>> GetFiles()
         {
             StorageFolder appFolder = null;
@@ -85,10 +86,10 @@ namespace PintorLab.Views
             return sfiles;
         }
 
-        /**
-         * Crea la página de forma dinamica
-         */
-         [Obsolete("Se reemplazó para crear un GridView")]
+        ///<summary>
+        ///Crea la página de forma dinamica
+        ///</summary>
+        [Obsolete("Se reemplazó para crear un GridView")]
         private async void CreatePage()
         {
             IEnumerable<string> files = await GetFiles();
@@ -113,9 +114,9 @@ namespace PintorLab.Views
             }
         }
 
-        /**
-         * Transforma un archivo a imagen
-         */
+        ///<summary>
+        ///Transforma un archivo a imagen
+        ///</summary>
         [Obsolete]
         private Image FileToImage(string file)
         {
