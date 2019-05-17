@@ -32,6 +32,7 @@ namespace PintorLab.Controllers
             savePicker.FileTypeChoices.Add("PNG", new List<string>() { ".png"});
             savePicker.FileTypeChoices.Add("JPG", new List<string>() { ".bmp"});
             savePicker.FileTypeChoices.Add("JPEG", new List<string>() { ".jpeg"});
+            savePicker.FileTypeChoices.Add("JPG", new List<string>() { ".jpg"});
             savePicker.SuggestedFileName = "newdraw";
 
             StorageFile sf = await savePicker.PickSaveFileAsync();
@@ -47,7 +48,7 @@ namespace PintorLab.Controllers
                 {
                     await DibujoAImagen(inkCanvas).SaveAsync(stream, CanvasBitmapFileFormat.Png, 1f);
                 }
-                else if (fName.EndsWith("jpeg"))
+                else if (fName.EndsWith("jpeg") || fName.EndsWith("jpg"))
                 {
                     await DibujoAImagen(inkCanvas).SaveAsync(stream, CanvasBitmapFileFormat.Jpeg, 1f);
                 }
