@@ -66,7 +66,14 @@ namespace PintorLab.Views
         /// </param>
         private async void Save_Click(object sender, RoutedEventArgs e)
         {
-            await FileController.GuardarDibujo(miCanvas);
+            try
+            {
+                await FileController.GuardarDibujo(miCanvas);
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
         }
 
         ///<summary>
@@ -93,13 +100,7 @@ namespace PintorLab.Views
                     }
                     catch (Exception ex)
                     {
-                        ContentDialog errorDialog = new ContentDialog
-                        {
-                            Title = "Error",
-                            Content = ex.Message,
-                            CloseButtonText = "Ok"
-                        };
-                        await errorDialog.ShowAsync();
+                        ErrorMessage(ex.Message);
                     }
                 }
                 stream.Dispose();
@@ -117,7 +118,15 @@ namespace PintorLab.Views
         /// </param>
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            miCanvas.InkPresenter.StrokeContainer.Clear();
+            try
+            {
+                miCanvas.InkPresenter.StrokeContainer.Clear();
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+            
         }
 
         ///<summary>
@@ -131,12 +140,19 @@ namespace PintorLab.Views
         /// </param>
         private void Undo(object sender, RoutedEventArgs e)
         {
-            IReadOnlyList<InkStroke> strokes = miCanvas.InkPresenter.StrokeContainer.GetStrokes();
-            if (strokes.Count > 0)
+            try
             {
-                strokes[strokes.Count - 1].Selected = true;
-                UndoStrokes.Push(strokes[strokes.Count - 1]);
-                miCanvas.InkPresenter.StrokeContainer.DeleteSelected();
+                IReadOnlyList<InkStroke> strokes = miCanvas.InkPresenter.StrokeContainer.GetStrokes();
+                if (strokes.Count > 0)
+                {
+                    strokes[strokes.Count - 1].Selected = true;
+                    UndoStrokes.Push(strokes[strokes.Count - 1]);
+                    miCanvas.InkPresenter.StrokeContainer.DeleteSelected();
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
             }
         }
 
@@ -151,16 +167,23 @@ namespace PintorLab.Views
         /// </param>
         private void Redo(object sender, RoutedEventArgs e)
         {
-            if (UndoStrokes.Count > 0)
+            try
             {
-                InkStroke stroke = UndoStrokes.Pop();
-                InkStrokeBuilder strokeBuilder = new InkStrokeBuilder();
+                if (UndoStrokes.Count > 0)
+                {
+                    InkStroke stroke = UndoStrokes.Pop();
+                    InkStrokeBuilder strokeBuilder = new InkStrokeBuilder();
 
-                strokeBuilder.SetDefaultDrawingAttributes(stroke.DrawingAttributes);
-                System.Numerics.Matrix3x2 matrix = stroke.PointTransform;
-                IReadOnlyList<InkPoint> inkPoints = stroke.GetInkPoints();
-                InkStroke stk = strokeBuilder.CreateStrokeFromInkPoints(inkPoints, matrix);
-                miCanvas.InkPresenter.StrokeContainer.AddStroke(stk);
+                    strokeBuilder.SetDefaultDrawingAttributes(stroke.DrawingAttributes);
+                    System.Numerics.Matrix3x2 matrix = stroke.PointTransform;
+                    IReadOnlyList<InkPoint> inkPoints = stroke.GetInkPoints();
+                    InkStroke stk = strokeBuilder.CreateStrokeFromInkPoints(inkPoints, matrix);
+                    miCanvas.InkPresenter.StrokeContainer.AddStroke(stk);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
             }
         }
 
@@ -175,7 +198,31 @@ namespace PintorLab.Views
         /// </param>
         private void Menu_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            try
+            {
+                Frame.Navigate(typeof(MainPage));
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage(ex.Message);
+            }
+        }
+
+        ///<summary>
+        ///Muestra un mensaje de error
+        ///</summary>
+        ///<param name="message">
+        ///El mensaje que muestra
+        /// </param>
+        private async void ErrorMessage(string message)
+        {
+            ContentDialog errorDialog = new ContentDialog()
+            {
+                Title = "Error",
+                Content = message,
+                CloseButtonText = "Ok"
+            };
+            await errorDialog.ShowAsync();
         }
     }
 }
