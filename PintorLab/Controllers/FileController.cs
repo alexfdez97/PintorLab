@@ -30,9 +30,9 @@ namespace PintorLab.Controllers
 
             savePicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
             savePicker.FileTypeChoices.Add("PNG", new List<string>() { ".png"});
-            savePicker.FileTypeChoices.Add("JPG", new List<string>() { ".bmp"});
+            savePicker.FileTypeChoices.Add("BMP", new List<string>() { ".bmp"});
             savePicker.FileTypeChoices.Add("JPEG", new List<string>() { ".jpeg"});
-            savePicker.FileTypeChoices.Add("JPG", new List<string>() { ".jpg"});
+            savePicker.FileTypeChoices.Add("JPG", new List<string>() { ".jpg" });
             savePicker.SuggestedFileName = "newdraw";
 
             StorageFile sf = await savePicker.PickSaveFileAsync();
